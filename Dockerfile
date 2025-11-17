@@ -22,6 +22,4 @@ COPY --chown=appuser:appuser --from=builder /app/build/libs/*.jar app.jar
 
 USER appuser
 
-EXPOSE 8080
-
 ENTRYPOINT ["java", "-jar", "app.jar"]

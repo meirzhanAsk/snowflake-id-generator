@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: snowflake-id-generator-pod
+spec:
+  containers:
+    - name: snowflake-id-generator
+      image: meirzhan250/snowflake-id-generator:1.0.0
+      ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP

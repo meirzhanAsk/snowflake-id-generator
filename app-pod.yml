@@ -5,6 +5,23 @@ metadata:
 spec:
   containers:
     - name: snowflake-id-generator
+      livenessProbe:
+        httpGet:
+          path: /healthy
+          port: 8080
+        initialDelaySeconds: 15
+        timeoutSeconds: 2
+        periodSeconds: 15
+        failureThreshold: 3
+      readinessProbe:
+        httpGet:
+          path: /ready
+          port: 8080
+        initialDelaySeconds: 5
+        timeoutSeconds: 1
+        periodSeconds: 5
+        failureThreshold: 3
+        successThreshold: 1
       image: meirzhan250/snowflake-id-generator:1.0.0
       ports:
         - containerPort: 8080

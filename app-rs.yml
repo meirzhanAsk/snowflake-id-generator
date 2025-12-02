@@ -14,6 +14,7 @@ spec:
     spec:
       containers:
         - name: snowflake-id-generator
+          image: meirzhan250/snowflake-id-generator:1.0.0
           livenessProbe:
             httpGet:
               path: /management/health/liveness
@@ -31,7 +32,6 @@ spec:
             periodSeconds: 5
             failureThreshold: 3
             successThreshold: 1
-          image: meirzhan250/snowflake-id-generator:1.0.0
           ports:
             - containerPort: 8080
               name: http

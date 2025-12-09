@@ -22,7 +22,7 @@ spec:
         periodSeconds: 5
         failureThreshold: 3
         successThreshold: 1
-      image: meirzhan250/snowflake-id-generator:1.0.0
+      image: meirzhan250/snowflake-id-generator:1.0.2
       ports:
         - containerPort: 8080
           name: http

@@ -28,6 +28,7 @@ dependencies {
 	testImplementation(libs.junit.jupiter)
 	testImplementation(libs.assertj.core)
 	testImplementation(libs.kotlinx.coroutines.test)
+	implementation("io.github.microutils:kotlin-logging:3.0.5")
 }
 
 tasks.withType<KotlinCompile> {
